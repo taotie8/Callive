@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoomListsController" customModule="Callive" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="aZL-ky-GNO" id="EMd-of-NXv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cal_bg" translatesAutoresizingMaskIntoConstraints="NO" id="DFi-DN-qaZ">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rooms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWh-Bh-4EV">
+                    <rect key="frame" x="16" y="118" width="57" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="BWk-4h-NQB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTe-1m-kpx">
+                    <rect key="frame" x="343" y="118" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="42j-wH-j6V"/>
+                        <constraint firstAttribute="width" constant="40" id="7Ax-gS-07L"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="cal_search"/>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aZL-ky-GNO">
+                    <rect key="frame" x="0.0" y="168" width="393" height="616"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="iWh-Bh-4EV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5UP-D0-yum"/>
+                <constraint firstAttribute="bottom" secondItem="DFi-DN-qaZ" secondAttribute="bottom" id="BA4-jz-q1i"/>
+                <constraint firstItem="OTe-1m-kpx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FNg-gq-cJu"/>
+                <constraint firstItem="aZL-ky-GNO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="POA-w2-ig9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="aZL-ky-GNO" secondAttribute="bottom" id="Roc-mf-YJD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OTe-1m-kpx" secondAttribute="trailing" constant="10" id="Sj9-ql-kMZ"/>
+                <constraint firstItem="iWh-Bh-4EV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Smf-Zs-1ce"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aZL-ky-GNO" secondAttribute="trailing" id="VN8-n7-0Vs"/>
+                <constraint firstItem="aZL-ky-GNO" firstAttribute="top" secondItem="iWh-Bh-4EV" secondAttribute="bottom" constant="10" id="dZl-r6-54T"/>
+                <constraint firstAttribute="trailing" secondItem="DFi-DN-qaZ" secondAttribute="trailing" id="jIz-Rb-XLn"/>
+                <constraint firstItem="DFi-DN-qaZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="l8r-4V-9Aj"/>
+                <constraint firstItem="DFi-DN-qaZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zhe-Ih-DVg"/>
+            </constraints>
+            <point key="canvasLocation" x="-16" y="108"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cal_bg" width="375" height="812"/>
+        <image name="cal_search" width="18.333333969116211" height="18.333333969116211"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

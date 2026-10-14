@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoCallsController" customModule="Callive" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8M-i3-tZv">
+                    <rect key="frame" x="0.0" y="584" width="393" height="268"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ry-Jm-The">
+                            <rect key="frame" x="158.66666666666666" y="110" width="76" height="76"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="call_end"/>
+                            <connections>
+                                <action selector="callingWndAction:" destination="-1" eventType="touchUpInside" id="THp-zd-FId"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Calling..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwU-XC-TH9">
+                            <rect key="frame" x="163" y="50" width="67" height="23"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="23" id="ak3-TX-f3z"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="кαηα" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1DZ-d2-0D5">
+                            <rect key="frame" x="168.33333333333334" y="12" width="56.333333333333343" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="R8x-EF-LxF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="1Ry-Jm-The" firstAttribute="centerX" secondItem="b8M-i3-tZv" secondAttribute="centerX" id="8pj-Qu-sne"/>
+                        <constraint firstAttribute="bottom" secondItem="1Ry-Jm-The" secondAttribute="bottom" constant="82" id="CMb-eH-g3P"/>
+                        <constraint firstAttribute="height" constant="268" id="IKT-WK-w0g"/>
+                        <constraint firstItem="gwU-XC-TH9" firstAttribute="centerX" secondItem="b8M-i3-tZv" secondAttribute="centerX" id="PYX-6V-ZlA"/>
+                        <constraint firstItem="1Ry-Jm-The" firstAttribute="top" secondItem="gwU-XC-TH9" secondAttribute="bottom" constant="37" id="fdg-h1-Kqz"/>
+                        <constraint firstItem="1DZ-d2-0D5" firstAttribute="centerX" secondItem="b8M-i3-tZv" secondAttribute="centerX" id="rev-5j-IAe"/>
+                        <constraint firstItem="gwU-XC-TH9" firstAttribute="top" secondItem="1DZ-d2-0D5" secondAttribute="bottom" constant="4" id="sjN-m6-M74"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b8M-i3-tZv" secondAttribute="trailing" id="7Y9-uj-eDK"/>
+                <constraint firstItem="b8M-i3-tZv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="A9H-kJ-WXG"/>
+                <constraint firstAttribute="bottom" secondItem="b8M-i3-tZv" secondAttribute="bottom" id="r1f-JO-luB"/>
+            </constraints>
+            <point key="canvasLocation" x="81.679389312977094" y="107.74647887323944"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="call_end" width="76" height="76"/>
+    </resources>
+</document>

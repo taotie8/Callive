@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserCenterController" customModule="Callive" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="Suv-BK-ees" id="UHu-Az-ENx"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jYc-jb-EjA">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="375"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cal_header" translatesAutoresizingMaskIntoConstraints="NO" id="FL9-6d-lPT">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="375"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="FL9-6d-lPT" secondAttribute="bottom" id="Nux-pf-65H"/>
+                        <constraint firstItem="FL9-6d-lPT" firstAttribute="leading" secondItem="jYc-jb-EjA" secondAttribute="leading" id="iv0-yC-0sR"/>
+                        <constraint firstAttribute="trailing" secondItem="FL9-6d-lPT" secondAttribute="trailing" id="j54-QW-h7J"/>
+                        <constraint firstAttribute="height" constant="375" id="tfR-57-rDt"/>
+                        <constraint firstItem="FL9-6d-lPT" firstAttribute="top" secondItem="jYc-jb-EjA" secondAttribute="top" id="yYK-EO-Gxu"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZl-tg-P9g">
+                    <rect key="frame" x="0.0" y="118" width="393" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHP-da-dhk">
+                            <rect key="frame" x="10" y="0.0" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="pr7-ZK-tjQ"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="cal_back"/>
+                            <connections>
+                                <action selector="back:" destination="-1" eventType="touchUpInside" id="GAy-IZ-h6G"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ft-XT-cqk">
+                            <rect key="frame" x="343" y="0.0" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="aZD-TT-hjh"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="cal_more"/>
+                            <connections>
+                                <action selector="moreAction:" destination="-1" eventType="touchUpInside" id="fec-wS-NEs"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="3Ft-XT-cqk" firstAttribute="top" secondItem="fZl-tg-P9g" secondAttribute="top" id="1Xr-t0-bhb"/>
+                        <constraint firstItem="wHP-da-dhk" firstAttribute="leading" secondItem="fZl-tg-P9g" secondAttribute="leading" constant="10" id="F7f-uG-A2k"/>
+                        <constraint firstAttribute="bottom" secondItem="3Ft-XT-cqk" secondAttribute="bottom" id="NjP-wg-1gc"/>
+                        <constraint firstAttribute="height" constant="40" id="bXO-8I-Cvc"/>
+                        <constraint firstAttribute="bottom" secondItem="wHP-da-dhk" secondAttribute="bottom" id="eep-kx-XY7"/>
+                        <constraint firstAttribute="trailing" secondItem="3Ft-XT-cqk" secondAttribute="trailing" constant="10" id="jwe-G0-3mb"/>
+                        <constraint firstItem="wHP-da-dhk" firstAttribute="top" secondItem="fZl-tg-P9g" secondAttribute="top" id="nEp-23-h5F"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Suv-BK-ees">
+                    <rect key="frame" x="0.0" y="200" width="393" height="652"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkI-n8-HVc">
+                    <rect key="frame" x="16" y="772" width="132" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="132" id="ctX-ju-h5B"/>
+                        <constraint firstAttribute="height" constant="46" id="g2W-9u-Ryn"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" backgroundImage="cal_chat_text"/>
+                    <connections>
+                        <action selector="chatAndVideoCallsAction:" destination="-1" eventType="touchUpInside" id="ZSE-79-32z"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kh-mH-oYy">
+                    <rect key="frame" x="160" y="772" width="217" height="46"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" backgroundImage="cal_video_call"/>
+                    <connections>
+                        <action selector="chatAndVideoCallsAction:" destination="-1" eventType="touchUpInside" id="pZy-qM-Ked"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Suv-BK-ees" secondAttribute="bottom" id="585-JV-YOP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fZl-tg-P9g" secondAttribute="trailing" id="5Sg-tR-p9A"/>
+                <constraint firstAttribute="bottom" secondItem="7kh-mH-oYy" secondAttribute="bottom" constant="34" id="9IV-Cu-9LQ"/>
+                <constraint firstAttribute="bottom" secondItem="jkI-n8-HVc" secondAttribute="bottom" constant="34" id="Aw7-uZ-FXQ"/>
+                <constraint firstItem="jYc-jb-EjA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Idp-BW-8wW"/>
+                <constraint firstItem="Suv-BK-ees" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KTC-69-YQn"/>
+                <constraint firstItem="fZl-tg-P9g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OmS-wd-3oV"/>
+                <constraint firstItem="Suv-BK-ees" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="200" id="PwJ-jF-MAQ"/>
+                <constraint firstAttribute="trailing" secondItem="jYc-jb-EjA" secondAttribute="trailing" id="R2F-Qv-71g"/>
+                <constraint firstItem="jkI-n8-HVc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="TBR-Va-vub"/>
+                <constraint firstItem="fZl-tg-P9g" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="U6A-49-WUZ"/>
+                <constraint firstItem="7kh-mH-oYy" firstAttribute="leading" secondItem="jkI-n8-HVc" secondAttribute="trailing" constant="12" id="XQp-9w-9o7"/>
+                <constraint firstItem="jYc-jb-EjA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fZO-wg-l2s"/>
+                <constraint firstAttribute="trailing" secondItem="7kh-mH-oYy" secondAttribute="trailing" constant="16" id="g0P-xK-ntS"/>
+                <constraint firstItem="Suv-BK-ees" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="xDO-We-qeN"/>
+            </constraints>
+            <point key="canvasLocation" x="87.786259541984734" y="107.74647887323944"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cal_back" width="30" height="30"/>
+        <image name="cal_chat_text" width="128" height="46"/>
+        <image name="cal_header" width="800" height="800"/>
+        <image name="cal_more" width="30" height="30"/>
+        <image name="cal_video_call" width="203" height="46"/>
+    </resources>
+</document>
