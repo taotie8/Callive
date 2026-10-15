@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ToolsReportView" customModule="Callive" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YR8-Kn-Yr6">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoY-ZS-cFS">
+                    <rect key="frame" x="0.0" y="671" width="393" height="181"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cal_report_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="67x-Yp-3Ac">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="181"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Tools" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6d-l8-wYX">
+                            <rect key="frame" x="16" y="30" width="98" height="22"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                            <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TfG-CF-EIh">
+                            <rect key="frame" x="353" y="0.0" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="GkK-rO-d5D"/>
+                                <constraint firstAttribute="height" constant="40" id="NSH-wg-VAK"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="cal_end"/>
+                            <connections>
+                                <action selector="closeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="cdN-xg-aMw"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfZ-SY-Gq5">
+                            <rect key="frame" x="16" y="72" width="48" height="69"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="cal_report"/>
+                            <connections>
+                                <action selector="toolsReportAndBlockAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="jUl-C7-hoa"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MJ-pg-RNV">
+                            <rect key="frame" x="96" y="72" width="48" height="69"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="cal_block"/>
+                            <connections>
+                                <action selector="toolsReportAndBlockAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="f3o-qf-QxO"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="7MJ-pg-RNV" firstAttribute="top" secondItem="D6d-l8-wYX" secondAttribute="bottom" constant="20" id="36J-Uj-iSB"/>
+                        <constraint firstItem="7MJ-pg-RNV" firstAttribute="leading" secondItem="dfZ-SY-Gq5" secondAttribute="trailing" constant="32" id="I9J-U1-aVY"/>
+                        <constraint firstItem="67x-Yp-3Ac" firstAttribute="leading" secondItem="zoY-ZS-cFS" secondAttribute="leading" id="J3d-x3-xYg"/>
+                        <constraint firstItem="67x-Yp-3Ac" firstAttribute="top" secondItem="zoY-ZS-cFS" secondAttribute="top" id="Kba-f4-nEL"/>
+                        <constraint firstItem="D6d-l8-wYX" firstAttribute="leading" secondItem="zoY-ZS-cFS" secondAttribute="leading" constant="16" id="Rn8-Ee-RPK"/>
+                        <constraint firstItem="dfZ-SY-Gq5" firstAttribute="top" secondItem="D6d-l8-wYX" secondAttribute="bottom" constant="20" id="Uus-ME-YqK"/>
+                        <constraint firstAttribute="bottom" secondItem="67x-Yp-3Ac" secondAttribute="bottom" id="a61-Sn-1W5"/>
+                        <constraint firstItem="TfG-CF-EIh" firstAttribute="top" secondItem="zoY-ZS-cFS" secondAttribute="top" id="flr-bY-hpr"/>
+                        <constraint firstAttribute="trailing" secondItem="67x-Yp-3Ac" secondAttribute="trailing" id="mL2-cZ-tA9"/>
+                        <constraint firstAttribute="trailing" secondItem="TfG-CF-EIh" secondAttribute="trailing" id="rT4-Yj-NG1"/>
+                        <constraint firstItem="D6d-l8-wYX" firstAttribute="top" secondItem="zoY-ZS-cFS" secondAttribute="top" constant="30" id="tOb-fV-2c3"/>
+                        <constraint firstItem="dfZ-SY-Gq5" firstAttribute="leading" secondItem="zoY-ZS-cFS" secondAttribute="leading" constant="16" id="vZ7-i2-rUF"/>
+                        <constraint firstAttribute="height" constant="181" id="vmZ-Yn-rPb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="YR8-Kn-Yr6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HtD-Ed-gK2"/>
+                <constraint firstItem="YR8-Kn-Yr6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="IUG-cy-2sm"/>
+                <constraint firstAttribute="trailing" secondItem="zoY-ZS-cFS" secondAttribute="trailing" id="W8i-4y-Ybd"/>
+                <constraint firstAttribute="bottom" secondItem="zoY-ZS-cFS" secondAttribute="bottom" id="Xri-FV-t66"/>
+                <constraint firstItem="zoY-ZS-cFS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="YQX-Lo-UfQ"/>
+                <constraint firstAttribute="bottom" secondItem="YR8-Kn-Yr6" secondAttribute="bottom" id="agh-9L-xOQ"/>
+                <constraint firstAttribute="trailing" secondItem="YR8-Kn-Yr6" secondAttribute="trailing" id="dcK-c5-9Eo"/>
+            </constraints>
+            <point key="canvasLocation" x="83" y="108"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cal_block" width="48" height="69"/>
+        <image name="cal_end" width="24" height="24"/>
+        <image name="cal_report" width="48" height="69"/>
+        <image name="cal_report_bottom" width="375" height="181"/>
+    </resources>
+</document>

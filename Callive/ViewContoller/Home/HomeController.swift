@@ -42,7 +42,9 @@ class HomeController: UIViewController {
     }
     
     @IBAction func searchAction(_ sender: Any) {
-        
+        let vc = SearchController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

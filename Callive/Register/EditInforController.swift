@@ -12,7 +12,7 @@ class EditInforController: UIViewController {
     }
     
     @IBAction func back(_ sender: Any) {
-        
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func chooseUserHeaderAction(_ sender: UIButton) {
