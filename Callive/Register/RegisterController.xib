@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterController" customModule="Callive" customModuleProvider="target">
             <connections>
+                <outlet property="privacy_tap" destination="ACo-40-pde" id="WQT-I7-Dja"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -112,6 +113,9 @@
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="check_normal"/>
                     <state key="selected" image="check_select"/>
+                    <connections>
+                        <action selector="selectPrivacy:" destination="-1" eventType="touchUpInside" id="geF-Re-WYw"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEY-d0-MQd">
                     <rect key="frame" x="15" y="118" width="40" height="40"/>

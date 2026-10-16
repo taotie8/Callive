@@ -1,0 +1,36 @@
+包名: Celive
+AppID: 26737235
+App名称: MK-Celivxz
+
+配置地址: https://1v1h5.s3.us-east-1.amazonaws.com/login.html
+key: bcji
+password: b96jrw87
+
+aes_key: fog580znqjtgkber
+aes_iv: n70a309m7w4wfmw8
+
+正式官网: null
+接口地址: wsl.cinderdell31.top
+
+内购id:
+金额		钻石数		批次号(苹果商品id)
+99.99		63700		ezxltysxosjivjcd
+49.99		29400		esvvqegxxuqzhhkf
+19.99		10800		oceinkmghcwupxed
+9.99		5150		ubioggswezrtbtjh
+4.99		2450		pkozfndtwyncximb
+1.99		800		niihhxcdnqocsylg
+0.99		400		yliegugsgcatculf
+
+姓名
+与账户持有人姓名
+账户号码
+124707063405595
+ACH汇款路线号码
+028000024
+SWIFT/BIC代码
+CHASUS33
+银行名称
+JPMORGAN CHASE BANK, N.A.
+银行地址
+270 Park Ave, New York, NY 10017

@@ -1,13 +1,15 @@
 
 import UIKit
-
+import IQKeyboardManagerSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        IQKeyboardManager.shared.isEnabled = true
+        IQKeyboardManager.shared.resignOnTouchOutside = true
         window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.rootViewController = UINavigationController(rootViewController: MineController())
-        window?.rootViewController = CallliveTabBarController()
+        window?.rootViewController = UINavigationController(rootViewController: LoginController())
+//        window?.rootViewController = CallliveTabBarController()
         window?.makeKeyAndVisible()
         return true
     }

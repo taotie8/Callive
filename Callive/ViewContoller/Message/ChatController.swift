@@ -1,6 +1,6 @@
 
 import UIKit
-
+import IQKeyboardManagerSwift
 class ChatController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -8,6 +8,16 @@ class ChatController: UIViewController {
     @IBOutlet weak var name_label: UILabel!
     @IBOutlet weak var follow_button: UIButton!
     @IBOutlet weak var chat_textfiled: UITextField!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        IQKeyboardManager.shared.isEnabled = false
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        IQKeyboardManager.shared.isEnabled = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
