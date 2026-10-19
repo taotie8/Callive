@@ -1,7 +1,7 @@
 
 import Foundation
 import Alamofire
-
+import ZKProgressHUD
 enum NetworkError: Error {
     case unknown(String)
     case requestFailed(Error)
@@ -45,9 +45,15 @@ class Cal_Alamofire {
             "appId": "26737235",
             "X-Handset-Count": UIDevice.current.identifierForVendor?.uuidString ?? "",
             "X-Grove-Edition": Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0",
-            "X-Entry-Pass": UserDefaults.standard.object(forKey: "login_token") as? String ?? "",
             "X-Sprout-Signal": "", // pushToken
         ]
+        
+        if let loginInfo = CalLoginStorage.shared.loginInfo {
+            headers["X-Entry-Pass"] = "\(loginInfo.groveSeal ?? "") \(loginInfo.seedArchive ?? "")"
+            headers["X-Leaf-Renewal"] = loginInfo.forestPass
+            headers["Authorization"] = "\(loginInfo.groveSeal ?? "") \(loginInfo.welcomePass)"
+        }
+        
         return headers
     }
     
@@ -87,7 +93,20 @@ class Cal_Alamofire {
             switch response.result {
             case .success(let data):
 
-                print(String(data: data, encoding: .utf8) ?? "")
+//                print(String(data: data, encoding: .utf8) ?? "")
+                
+                if let jsonObject = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+                   let code = jsonObject["code"] as? Int,
+                   code == 40101 {
+//                    CalLoginStorage.shared.clear()
+                    
+                    DispatchQueue.main.async {
+                        UIApplication.shared.cal_window?.rootViewController = LoginController()
+                    }
+                    completion(.failure(.unknown("登录状态已失效")))
+                    ZKProgressHUD.showError(jsonObject["message"] as? String)
+                    return
+                }
                 
                 do {
                         let decryptedData = try self.decryptResponseData(data)

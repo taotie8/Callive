@@ -40,11 +40,15 @@ PODS:
     - IQKeyboardCore
   - IQTextView (1.0.5):
     - IQKeyboardToolbar/Placeholderable
+  - SDWebImage (5.21.7):
+    - SDWebImage/Core (= 5.21.7)
+  - SDWebImage/Core (5.21.7)
   - ZKProgressHUD (5.1.2)
 
 DEPENDENCIES:
   - Alamofire
   - IQKeyboardManagerSwift
+  - SDWebImage
   - ZKProgressHUD
 
 SPEC REPOS:
@@ -58,6 +62,7 @@ SPEC REPOS:
     - IQKeyboardToolbarManager
     - IQTextInputViewNotification
     - IQTextView
+    - SDWebImage
     - ZKProgressHUD
 
 SPEC CHECKSUMS:
@@ -70,8 +75,9 @@ SPEC CHECKSUMS:
   IQKeyboardToolbarManager: 242e858cc74e06e00aa989bea1355b24d4397854
   IQTextInputViewNotification: 3b9fb27a16e7ee8958cc9092cfb07a1a9e1fd559
   IQTextView: ae13b4922f22e6f027f62c557d9f4f236b19d5c7
+  SDWebImage: e9fc87c1aab89a8ab1bbd74eba378c6f53be8abf
   ZKProgressHUD: af9e9929c6935587da382bf23d31b4e995b8c229
 
-PODFILE CHECKSUM: 41bba5b4e64d8bfb0fb549556f183d4a522553c5
+PODFILE CHECKSUM: 2a83d5fe50a49459ea9258a546816488d7941af5
 
 COCOAPODS: 1.17.0

@@ -8,7 +8,8 @@ target 'Callive' do
   pod 'Alamofire'
   pod 'ZKProgressHUD'
   pod 'IQKeyboardManagerSwift'
-
+  pod 'SDWebImage'
+  
 end
 
 post_install do |installer|

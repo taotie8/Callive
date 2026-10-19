@@ -8,8 +8,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.isEnabled = true
         IQKeyboardManager.shared.resignOnTouchOutside = true
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: LoginController())
-//        window?.rootViewController = CallliveTabBarController()
+//        if UserDefaults.standard.object(forKey: "login_token") as? String != nil {
+            window?.rootViewController = CallliveTabBarController()
+//        }else {
+//            window?.rootViewController = UINavigationController(rootViewController: LoginController())
+//        }
         window?.makeKeyAndVisible()
         return true
     }

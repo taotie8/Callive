@@ -21,4 +21,14 @@ class UserMomentTableViewCell: UITableViewCell {
 
     }
     
+    func moment_cellUpdateViews(model: SunriseScene) {
+        cell_user_header.cal_setImage(model.petalMark)
+        cell_user_name.text = model.nickname
+        cell_moment_label.text = model.meadowScript
+        cell_pic_image.cal_setImage(model.images.count > 0 ? model.images.first : "")
+        cell_time_label.text = model.sunriseMoment
+        cell_love_label.text = "\(model.seedTally)"
+        cell_love_button.isSelected = model.blossomSignal == 1 ? true : false
+    }
+    
 }

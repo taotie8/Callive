@@ -5,24 +5,26 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UserCenterHeaderView" customModule="Callive" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="406"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="390"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYJ-M5-Xzc">
-                    <rect key="frame" x="0.0" y="155" width="393" height="251"/>
+                    <rect key="frame" x="0.0" y="155" width="393" height="235"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jM-pD-7Dp">
                             <rect key="frame" x="317" y="48" width="60" height="40"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="user_unfollow"/>
                             <state key="selected" image="user_follow"/>
+                            <connections>
+                                <action selector="followStatusAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="MHY-3n-7iK"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="кαηα" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1S-G8-u6g">
                             <rect key="frame" x="15.999999999999996" y="48" width="47.666666666666657" height="28"/>
@@ -50,6 +52,9 @@
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="cal_copy"/>
+                            <connections>
+                                <action selector="pasteUserIdAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="nfF-lb-ELv"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verified creator. Loves acoustic music, travel stories and thoughtful late-night room." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceg-yM-ZFY">
                             <rect key="frame" x="16" y="116.00000000000001" width="361" height="28.666666666666671"/>
@@ -85,7 +90,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="fai-au-11W" firstAttribute="top" secondItem="Bfa-OH-Goy" secondAttribute="top" id="Bb5-TS-bjK"/>
                                 <constraint firstAttribute="bottom" secondItem="hhN-QJ-z9r" secondAttribute="bottom" id="Dey-GA-KRi"/>
@@ -150,7 +155,13 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="user_follow_button" destination="9jM-pD-7Dp" id="61K-8v-y1f"/>
+                <outlet property="user_followers_label" destination="JHJ-cr-Vvp" id="d1L-U4-69E"/>
+                <outlet property="user_following_label" destination="kCf-qy-ERT" id="HYS-Jo-wg2"/>
                 <outlet property="user_header_image" destination="TRn-dz-whI" id="q2g-Pi-bhF"/>
+                <outlet property="user_id_label" destination="oGu-Mp-SkW" id="ykS-R7-oER"/>
+                <outlet property="user_name_label" destination="J1S-G8-u6g" id="nsB-uh-r4E"/>
+                <outlet property="user_sign_label" destination="ceg-yM-ZFY" id="kxr-is-4Em"/>
             </connections>
             <point key="canvasLocation" x="-16.030534351145036" y="247.18309859154931"/>
         </view>
@@ -160,8 +171,5 @@
         <image name="cal_header" width="800" height="800"/>
         <image name="user_follow" width="60" height="40"/>
         <image name="user_unfollow" width="60" height="40"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
