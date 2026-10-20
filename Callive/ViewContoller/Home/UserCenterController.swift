@@ -13,7 +13,6 @@ class UserCenterController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-//        headerView.backgroundColor = .red
         headerView.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 390)
         tableView.tableHeaderView = headerView
         
@@ -29,7 +28,10 @@ class UserCenterController: UIViewController {
     }
     
     @IBAction func moreAction(_ sender: Any) {
-        
+        let toolsView = Bundle.main.loadNibNamed("ToolsReportView", owner: nil, options: nil)?.first as! ToolsReportView
+        toolsView.user_id = userId
+        toolsView.cal_navigation = self.navigationController!
+        toolsView.showToolsReportView()
     }
     
     @IBAction func chatAndVideoCallsAction(_ sender: UIButton) {

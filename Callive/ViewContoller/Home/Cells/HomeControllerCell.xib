@@ -48,7 +48,7 @@
                 <outlet property="cell_cover_image" destination="l5o-Wi-6nY" id="VTr-rO-jLV"/>
                 <outlet property="cell_user_name" destination="f4Z-Au-0pD" id="7pT-gj-KDH"/>
             </connections>
-            <point key="canvasLocation" x="209.16030534351145" y="127.8169014084507"/>
+            <point key="canvasLocation" x="157" y="136"/>
         </collectionViewCell>
     </objects>
     <resources>

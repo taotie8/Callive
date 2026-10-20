@@ -14,9 +14,13 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YR8-Kn-Yr6">
+                <imageView clipsSubviews="YES" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YR8-Kn-Yr6">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="FEa-0F-tLk" appends="YES" id="ISP-mK-2zo"/>
+                    </connections>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoY-ZS-cFS">
                     <rect key="frame" x="0.0" y="671" width="393" height="181"/>
@@ -90,6 +94,11 @@
             </constraints>
             <point key="canvasLocation" x="83" y="108"/>
         </view>
+        <tapGestureRecognizer id="FEa-0F-tLk">
+            <connections>
+                <action selector="tapBgimageViewAction:" destination="iN0-l3-epB" id="Taz-tA-Da3"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="cal_block" width="48" height="69"/>

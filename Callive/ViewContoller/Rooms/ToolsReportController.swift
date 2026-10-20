@@ -1,16 +1,18 @@
 
 import UIKit
-
+import ZKProgressHUD
 class ToolsReportController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var specific_label: UILabel!
     @IBOutlet weak var remarks_label: UITextView!
     @IBOutlet var remarkView: UIView!
+    var userId: Int64 = 0
     var items = [String]()
     var idx = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        remarks_label.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ToolsReportCell", bundle: nil), forCellReuseIdentifier: "cell")
@@ -23,11 +25,21 @@ class ToolsReportController: UIViewController {
     }
     
     @IBAction func submitAction(_ sender: Any) {
-        
+        ZKProgressHUD.show()
+        Cal_Alamofire.shared.postData(urlSuffix: cal_feedback, body: ["replyKind": "OTHER", "riverVisitor": userId]) { result in
+            ZKProgressHUD.dismiss()
+            switch result {
+            case .success(_):
+                ZKProgressHUD.showSuccess()
+                self.navigationController?.popViewController(animated: true)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 
-extension ToolsReportController: UITableViewDelegate, UITableViewDataSource {
+extension ToolsReportController: UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -51,5 +63,12 @@ extension ToolsReportController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         idx = indexPath.item
         tableView.reloadData()
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        specific_label.text = ""
+        if remarks_label.text.count == 0 {
+            specific_label.text = "Specific reasons for the report"
+        }
     }
 }

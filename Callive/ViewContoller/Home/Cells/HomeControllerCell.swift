@@ -16,5 +16,10 @@ class HomeControllerCell: UICollectionViewCell {
         cell_cover_image.cal_setImage(model.petalMark, placeholder: UIImage(named: "cal_header"))
         cell_user_name.text = model.dailyTitle
     }
+    
+    func home_cellUpdateVideoViews(model: MeadowLineItem) {
+        cell_cover_image.cal_setImage(model.meadowImage)
+        cell_user_name.text = model.gardenStory
+    }
 
 }

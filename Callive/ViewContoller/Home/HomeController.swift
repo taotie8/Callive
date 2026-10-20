@@ -2,12 +2,21 @@
 import UIKit
 import ZKProgressHUD
 
+enum HomeType: Int, CaseIterable {
+    case all = 0
+    case video
+    case new
+    case follow
+}
+
 class HomeController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var titleView: UIView!
     private var items: [MeadowLine] = []
+    private var videos: [MeadowLineItem] = []
     private var currentPage = 1
+    private var home_type: HomeType = .all
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -17,12 +26,7 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        homeAllMedatas()
-        
         getAppNewConfig()
-//        updateUserToken() {
-//            
-//        }
     }
     
     func getAppNewConfig() {
@@ -74,6 +78,20 @@ class HomeController: UIViewController {
                 }
             }
         }
+        items.removeAll()
+        videos.removeAll()
+        home_type = .all
+        if sender.titleLabel?.text == "All" {
+            homeAllMedatas()
+            home_type = .all
+        }else if sender.titleLabel?.text == "Video" {
+            homeVideoLists()
+            home_type = .video
+        }
+        else if sender.titleLabel?.text == "Follow" {
+            homeFollowUserList()
+            home_type = .follow
+        }
     }
     
     @IBAction func searchAction(_ sender: Any) {
@@ -112,26 +130,80 @@ class HomeController: UIViewController {
                 print(error)
             }
         }
-        
     }
     
+    
+    func homeVideoLists() {
+        ZKProgressHUD.show()
+        Cal_Alamofire.shared.post(urlSuffix: cal_video_list) { [weak self] (result: Result<MeadowLinesResponse, NetworkError>) in
+            ZKProgressHUD.dismiss()
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                if self.currentPage == 1 {
+                    self.videos = response.meadowLines
+                } else {
+                    self.videos.append(contentsOf: response.meadowLines)
+                }
+                self.collectionView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func homeFollowUserList() {
+        ZKProgressHUD.show()
+        Cal_Alamofire.shared.post(urlSuffix: cal_follow_list) { [weak self] (result: Result<HomeAllResponse, NetworkError>) in
+            ZKProgressHUD.dismiss()
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                if self.currentPage == 1 {
+                    self.items = response.meadowLines
+                } else {
+                    self.items.append(contentsOf: response.meadowLines)
+                }
+                self.collectionView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
 
 extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if home_type == .video {
+            return videos.count
+        }
         return items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let model = items[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeControllerCell
         cell.backgroundColor = .clear
-        cell.home_cellUpdateViews(model: model)
+        if home_type == .video {
+            let model = videos[indexPath.item]
+            cell.home_cellUpdateVideoViews(model: model)
+        }
+        else {
+            let model = items[indexPath.item]
+            cell.home_cellUpdateViews(model: model)
+        }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if home_type == .video {
+            let model = videos[indexPath.item]
+            let vc = PlayVideoController()
+            vc.model = model
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+            return
+        }
         let model = items[indexPath.item]
         let vc = UserCenterController()
         vc.userId = model.forestGuest
@@ -140,10 +212,13 @@ extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cell_width = (UIScreen.main.bounds.width - 32.08)/2
+        if home_type == .follow {
+            return CGSize(width: cell_width, height: cell_width * 1.17)
+        }
         if indexPath.row == 0 {
             return CGSize(width: UIScreen.main.bounds.width - 24, height: (UIScreen.main.bounds.width - 24) * 0.62)
         }
-        let cell_width = (UIScreen.main.bounds.width - 32.08)/2
         return CGSize(width: cell_width, height: cell_width * 1.17)
     }
 }

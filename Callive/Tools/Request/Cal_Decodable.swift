@@ -74,6 +74,37 @@ struct MeadowLine: Decodable {
     let seasons: Int            // 年龄
 }
 
+/// 首页Video列表
+struct MeadowLinesResponse: Decodable {
+    let meadowLines: [MeadowLineItem] // 草地/用户列表
+}
+
+struct MeadowLineItem: Decodable {
+    let tierLabel: String?      // 等级名称
+    let thornToken: Int?        // 荆棘令牌数量
+    let willowNook: String?     // 房间标识
+    let orchardHealth: Int?     // 房间健康值
+    let gatheringKey: String?   // 聊天室或频道标识
+    let villageCount: Int?      // 房间人数
+    let meadowHandle: String?   // 用户标识
+    let petalMark: String?      // 用户头像地址
+    let onlineUsers: [String]?  // 在线用户列表
+    let gardenLabel: String?    // 房间名称
+    let gardenSignal: Int?      // 房间状态
+    let forestGuest: Int64     // 用户 ID
+    let nebulaBackdrop: String? // 房间背景图
+    let groveBadge: String?     // 用户徽章
+    let gardenStory: String?    // 房间简介或动态描述
+    let videoUrl: String?       // 视频地址
+    let meadowQuiet: Int?       // 静音状态
+    let nickname: String?       // 用户昵称
+    let visitSignal: Int?       // 关注状态
+    let groveKey: Int64?        // 数据唯一 ID
+    let meadowSignal: Int?      // 用户状态
+    let seasons: Int?           // 用户等级或成长值
+    let meadowImage: String?    // 房间封面图
+}
+
 /// 用户详情
 struct MeadowHostResponse: Decodable {
     let sunriseScenes: [SunriseScene]   // 主播朋友圈动态列表
