@@ -2,7 +2,7 @@
 import UIKit
 
 class RoomListsController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -14,6 +14,19 @@ class RoomListsController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "RoomListsCell", bundle: nil), forCellReuseIdentifier: "cell")
+    }
+    
+    func requestVoiceRooms() {
+        Cal_Alamofire.shared.postData(urlSuffix: cal_home_all) { result in
+            ZKProgressHUD.dismiss()
+            switch result {
+            case .success(let data):
+                print(String(data: data, encoding: .utf8) ?? "")
+
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 

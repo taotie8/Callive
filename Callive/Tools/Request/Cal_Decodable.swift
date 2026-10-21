@@ -177,12 +177,48 @@ struct UserDetailModel: Decodable {
 
 
 
+/// 我的资料
+func requestMineInformation() {
+    Cal_Alamofire.shared.postData(urlSuffix: cal_mine_info) { result in
+        ZKProgressHUD.dismiss()
+        switch result {
+        case .success(let data):
+            print(String(data: data, encoding: .utf8) ?? "")
+
+        case .failure(let error):
+            print(error)
+        }
+    }
+}
+
+/**
+ 
+ {"sunriseDay":"1997-03-17T07:26:22.410Z",
+ "itemSmallImg":"lopez.png",
+ "guestTally":0
+ ,"petalForm":2,
+ "leafSeal":"",
+ "gardenCount":0,
+ "meadowHandle":"",
+ "petalMark":"lopez.png",
+ "sproutCount":3,
+ "forestGuest":10001,
+ "gem":0,
+ "groveBadge":"US",
+ "elderDeadline":0,
+ "gardenStanding":10,
+ "seedCount":0,
+ "forestTier":10,
+ "gardenPass":"im_token_10001",
+ "nickname":"Lopez",
+ "groveElite":0,
+ "groveEmblem":""}
+
+ 
+ */
 
 
-
-
-
-
+/// 更新token
 func updateUserToken(completion: @escaping () -> Void) {
     var body = [String: String]()
     if let loginInfo = CalLoginStorage.shared.loginInfo {
