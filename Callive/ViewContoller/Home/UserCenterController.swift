@@ -30,7 +30,7 @@ class UserCenterController: UIViewController {
     @IBAction func moreAction(_ sender: Any) {
         let toolsView = Bundle.main.loadNibNamed("ToolsReportView", owner: nil, options: nil)?.first as! ToolsReportView
         toolsView.user_id = userId
-        toolsView.cal_navigation = self.navigationController!
+        toolsView.cal_self = self
         toolsView.showToolsReportView()
     }
     

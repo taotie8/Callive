@@ -27,13 +27,15 @@ func cal_pasteString(text: String) {
 
 
 final class CalLoginStorage {
-
+    
     static let shared = CalLoginStorage()
     private init() {}
-
+    
+    private let mineInfoKey = "cal_mine_info"
     private let storageKey = "cal_login_info"
     private let loginExpireTimestampKey = "loginExpireTimestamp"
     
+    /// 登陆返回的信息
     var loginInfo: LoginResponse? {
         guard let data = UserDefaults.standard.data(forKey: storageKey ) else {
             print("没有找到登录缓存")
@@ -47,11 +49,11 @@ final class CalLoginStorage {
             return nil
         }
     }
-
+    
     var isLogin: Bool {
         return loginInfo != nil
     }
-
+    
     func save(_ loginInfo: LoginResponse) {
         do {
             let data = try JSONEncoder().encode(loginInfo)
@@ -64,8 +66,8 @@ final class CalLoginStorage {
     
     func saveLoginTime(seasonWindow: Int) {
         let expireTimestamp =
-            Date().timeIntervalSince1970 + Double(seasonWindow)
-
+        Date().timeIntervalSince1970 + Double(seasonWindow)
+        
         UserDefaults.standard.set(
             expireTimestamp,
             forKey: loginExpireTimestampKey
@@ -76,14 +78,43 @@ final class CalLoginStorage {
         let expireTimestamp = UserDefaults.standard.double(
             forKey: loginExpireTimestampKey
         )
-
+        
         let currentTimestamp = Date().timeIntervalSince1970
         let remainingTime = expireTimestamp - currentTimestamp
-
+        
         return remainingTime <= 60
     }
-
+    
     func clear() {
         UserDefaults.standard.removeObject(forKey: storageKey)
+    }
+    
+    /// 我的信息
+    var mineInfo: MineInfoModel? {
+        guard let data = UserDefaults.standard.data(
+            forKey: mineInfoKey
+        ) else {
+            return nil
+        }
+
+        return try? JSONDecoder().decode(
+            MineInfoModel.self,
+            from: data
+        )
+    }
+
+    func saveMineInfo(_ info: MineInfoModel) {
+        guard let data = try? JSONEncoder().encode(info) else {
+            return
+        }
+
+        UserDefaults.standard.set(
+            data,
+            forKey: mineInfoKey
+        )
+    }
+    func logout() {
+        UserDefaults.standard.removeObject(forKey: storageKey)
+        UserDefaults.standard.removeObject(forKey: mineInfoKey)
     }
 }

@@ -3,7 +3,7 @@ import UIKit
 import ZKProgressHUD
 
 class ToolsReportView: UIView {
-    var cal_navigation = UINavigationController()
+    var cal_self = UIViewController()
     var user_id: Int64 = 0
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,7 +18,13 @@ class ToolsReportView: UIView {
             let vc = ToolsReportController()
             vc.userId = user_id
             vc.hidesBottomBarWhenPushed = true
-            cal_navigation.pushViewController(vc, animated: true)
+            if (cal_self.navigationController != nil) {
+                cal_self.navigationController?.pushViewController(vc, animated: true)
+            }
+            else {
+                vc.modalPresentationStyle = .fullScreen
+                cal_self.present(vc, animated: true)
+            }
             hiddenToolsReportView()
         }
         else {
@@ -28,7 +34,12 @@ class ToolsReportView: UIView {
                 switch result {
                 case .success(_):
                     ZKProgressHUD.showSuccess()
-                    self.cal_navigation.navigationController?.popViewController(animated: true)
+                    if (self.cal_self.navigationController != nil) {
+                        self.cal_self.navigationController?.navigationController?.popViewController(animated: true)
+                    }
+                    else {
+                        self.cal_self.dismiss(animated: true, completion: nil)
+                    }
                     self.hiddenToolsReportView()
                 case .failure(let error):
                     print(error)

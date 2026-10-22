@@ -1,5 +1,6 @@
 
 import UIKit
+import ZKProgressHUD
 
 class RoomListsController: UIViewController {
     
@@ -14,10 +15,12 @@ class RoomListsController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "RoomListsCell", bundle: nil), forCellReuseIdentifier: "cell")
+        
+        requestVoiceRooms()
     }
     
     func requestVoiceRooms() {
-        Cal_Alamofire.shared.postData(urlSuffix: cal_home_all) { result in
+        Cal_Alamofire.shared.postData(urlSuffix: cal_room_list) { result in
             ZKProgressHUD.dismiss()
             switch result {
             case .success(let data):

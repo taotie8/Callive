@@ -25,8 +25,9 @@ let cal_feedback = "/r2/echo/keep"              // 举报、意见反馈提交
 
 
 /// 语音房模块
-
-
+let cal_room_list = "/party/room/getViewers"          // 语音房列表
+let cal_gift_list = "/r2/leaf/treasure/index"         // 礼物列表
 
 /// 我的模块
 let cal_mine_info = "/v3/guest/story"           // 我的资料
+let cal_update_info = "/v3/guest/refresh"       // 更新资料

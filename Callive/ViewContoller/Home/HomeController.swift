@@ -26,8 +26,7 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-//        getAppNewConfig()
-        
+        getAppNewConfig()
         requestMineInformation()
     }
     
@@ -36,8 +35,7 @@ class HomeController: UIViewController {
         Cal_Alamofire.shared.postData(urlSuffix: cal_app_config) { [weak self] result in
             ZKProgressHUD.dismiss()
             switch result {
-            case .success(let data):
-                print(String(data: data, encoding: .utf8) ?? "")
+            case .success(_):
                 self?.backExpiresInStatus()
             case .failure(let error):
                 print(error)

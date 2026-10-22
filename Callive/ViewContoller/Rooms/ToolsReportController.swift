@@ -21,7 +21,11 @@ class ToolsReportController: UIViewController {
     }
 
     @IBAction func back(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        if self.navigationController != nil {
+            navigationController?.popViewController(animated: true)
+            return
+        }
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func submitAction(_ sender: Any) {

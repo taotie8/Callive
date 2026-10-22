@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DateOfBirthController" customModule="Callive" customModuleProvider="target">
+            <connections>
+                <outlet property="birth_label" destination="rqM-Hz-4bG" id="fTV-wN-C8J"/>
+                <outlet property="datePicker" destination="buF-Fn-8Ql" id="oSR-9w-Y0U"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_bg" translatesAutoresizingMaskIntoConstraints="NO" id="m8o-oN-Bqd">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQS-Uv-Ffh">
+                    <rect key="frame" x="0.0" y="118" width="393" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFA-wD-Bul">
+                            <rect key="frame" x="10" y="0.0" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="4pt-yI-3g3"/>
+                                <constraint firstAttribute="width" constant="40" id="NNy-F8-M26"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="cal_back"/>
+                            <connections>
+                                <action selector="back:" destination="-1" eventType="touchUpInside" id="LtE-k4-sP1"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIL-aU-8WL">
+                            <rect key="frame" x="62" y="9.3333333333333304" width="103" height="21.666666666666671"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                            <color key="textColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="TIL-aU-8WL" firstAttribute="leading" secondItem="oFA-wD-Bul" secondAttribute="trailing" constant="12" id="47P-Dh-wp3"/>
+                        <constraint firstItem="oFA-wD-Bul" firstAttribute="top" secondItem="YQS-Uv-Ffh" secondAttribute="top" id="BOg-PE-M2l"/>
+                        <constraint firstItem="TIL-aU-8WL" firstAttribute="centerY" secondItem="YQS-Uv-Ffh" secondAttribute="centerY" id="Hmp-CY-PKS"/>
+                        <constraint firstAttribute="height" constant="40" id="WMZ-GT-2um"/>
+                        <constraint firstAttribute="bottom" secondItem="oFA-wD-Bul" secondAttribute="bottom" id="Zyu-Y8-Iwo"/>
+                        <constraint firstItem="oFA-wD-Bul" firstAttribute="leading" secondItem="YQS-Uv-Ffh" secondAttribute="leading" constant="10" id="tJa-AH-ebS"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Your Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9V0-fx-GHy">
+                    <rect key="frame" x="16" y="178" width="195.66666666666666" height="23"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="23" id="mlr-1p-0ae"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Arial-BoldItalicMT" family="Arial" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a year, month and day. Your changes are applied when you tap Comfirm this date." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nA-Dg-mvI">
+                    <rect key="frame" x="16" y="217" width="361" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.64705882349999999" green="0.65490196079999996" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFg-hx-K6J">
+                    <rect key="frame" x="16" y="285" width="361" height="249"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqM-Hz-4bG">
+                            <rect key="frame" x="158" y="16" width="45" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="lbr-pq-oWH"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                            <color key="textColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="buF-Fn-8Ql">
+                            <rect key="frame" x="0.0" y="58" width="361" height="179"/>
+                        </datePicker>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="buF-Fn-8Ql" firstAttribute="top" secondItem="rqM-Hz-4bG" secondAttribute="bottom" constant="20" id="9Zl-2s-Mcr"/>
+                        <constraint firstAttribute="bottom" secondItem="buF-Fn-8Ql" secondAttribute="bottom" constant="12" id="BA9-aR-iQW"/>
+                        <constraint firstAttribute="height" constant="249" id="RhQ-Ns-WcE"/>
+                        <constraint firstAttribute="trailing" secondItem="buF-Fn-8Ql" secondAttribute="trailing" id="dvD-HT-Otf"/>
+                        <constraint firstItem="buF-Fn-8Ql" firstAttribute="leading" secondItem="AFg-hx-K6J" secondAttribute="leading" id="efw-pb-7ad"/>
+                        <constraint firstItem="rqM-Hz-4bG" firstAttribute="centerX" secondItem="AFg-hx-K6J" secondAttribute="centerX" id="lPb-Rl-Gz3"/>
+                        <constraint firstItem="rqM-Hz-4bG" firstAttribute="top" secondItem="AFg-hx-K6J" secondAttribute="top" constant="16" id="qrt-Zr-z4O"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGX-6g-4UG">
+                    <rect key="frame" x="39" y="700" width="315" height="46"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Confirm" backgroundImage="cal_common_tap"/>
+                    <connections>
+                        <action selector="confirmAction:" destination="-1" eventType="touchUpInside" id="15x-DJ-YcV"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="9nA-Dg-mvI" firstAttribute="top" secondItem="9V0-fx-GHy" secondAttribute="bottom" constant="16" id="7Gs-GH-VZo"/>
+                <constraint firstItem="9V0-fx-GHy" firstAttribute="top" secondItem="YQS-Uv-Ffh" secondAttribute="bottom" constant="20" id="E7o-fr-y6S"/>
+                <constraint firstItem="YQS-Uv-Ffh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="IeI-r6-PHf"/>
+                <constraint firstItem="9V0-fx-GHy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Oig-Un-iI0"/>
+                <constraint firstItem="YQS-Uv-Ffh" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="RVW-77-SRi"/>
+                <constraint firstItem="m8o-oN-Bqd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UbG-7m-9op"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yGX-6g-4UG" secondAttribute="bottom" constant="38" id="WQD-NC-C5w"/>
+                <constraint firstItem="AFg-hx-K6J" firstAttribute="top" secondItem="9nA-Dg-mvI" secondAttribute="bottom" constant="32" id="XJn-uR-DAQ"/>
+                <constraint firstItem="AFg-hx-K6J" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="b2o-CB-ytS"/>
+                <constraint firstAttribute="bottom" secondItem="m8o-oN-Bqd" secondAttribute="bottom" id="emT-3o-TDZ"/>
+                <constraint firstItem="9nA-Dg-mvI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ets-T8-XgN"/>
+                <constraint firstAttribute="trailing" secondItem="9nA-Dg-mvI" secondAttribute="trailing" constant="16" id="jIO-yi-rQb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AFg-hx-K6J" secondAttribute="trailing" constant="16" id="jQp-i2-hQ5"/>
+                <constraint firstItem="m8o-oN-Bqd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="omc-Ky-fvT"/>
+                <constraint firstItem="yGX-6g-4UG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pCQ-kS-lLK"/>
+                <constraint firstAttribute="trailing" secondItem="m8o-oN-Bqd" secondAttribute="trailing" id="qAy-Kv-BZG"/>
+                <constraint firstItem="YQS-Uv-Ffh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vGY-if-zxO"/>
+            </constraints>
+            <point key="canvasLocation" x="-211" y="96"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cal_back" width="30" height="30"/>
+        <image name="cal_common_tap" width="315" height="46"/>
+        <image name="mine_bg" width="375" height="812"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

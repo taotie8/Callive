@@ -1,0 +1,248 @@
+[
+  {
+    "nickname": "Lopez",
+    "avatar": "lopez.png",
+    "content": "Welcome everyone. This is a clean and friendly room.",
+    "type": "text"
+  },
+  {
+    "nickname": "Josea Alvm",
+    "avatar": "joseaalvm.png",
+    "content": "Nice to meet everyone here. What is everyone listening to today?",
+    "type": "text"
+  },
+  {
+    "nickname": "System",
+    "avatar": "",
+    "content": "Please be kind and keep the room clean.",
+    "type": "text"
+  },
+  {
+    "nickname": "Renteria",
+    "avatar": "renteria.png",
+    "content": "Something calm would be perfect for this evening.",
+    "type": "text"
+  },
+  {
+    "nickname": "SKNbyKiki",
+    "avatar": "SKNbyKiki.png",
+    "content": "I vote for a quiet playlist and good conversation.",
+    "type": "text"
+  },
+  {
+    "nickname": "Thiago Jsus",
+    "avatar": "thiagojsus.png",
+    "content": "That sounds good. Everyone gets to choose one song.",
+    "type": "text"
+  },
+  {
+    "nickname": "David bird",
+    "avatar": "davidbird.png",
+    "content": "I am here for the music, but I may stay for the jokes.",
+    "type": "text"
+  },
+  {
+    "nickname": "Rose",
+    "avatar": "rose.png",
+    "content": "Here is a little flower for the room.",
+    "giftImage": "https://app.zhegnidcg.com/file/Rose@3x.png",
+    "giftName": "Rose",
+    "giftCount": 1,
+    "type": "gift"
+  },
+  {
+    "nickname": "Lvy",
+    "avatar": "Ivy.png",
+    "content": "The room feels nice and relaxed tonight.",
+    "type": "text"
+  },
+  {
+    "nickname": "Lopez",
+    "avatar": "lopez.png",
+    "content": "Rocket",
+    "giftImage": "https://app.zhegnidcg.com/file/Rocket@3x.png",
+    "giftName": "Rocket",
+    "giftCount": 2,
+    "type": "gift"
+  },
+  {
+    "nickname": "Aria",
+    "avatar": "aria.png",
+    "content": "New here. Thanks for the warm welcome.",
+    "type": "text"
+  },
+  {
+    "nickname": "Dan",
+    "avatar": "dan.png",
+    "content": "Welcome, Aria. Hope you enjoy the room.",
+    "type": "text"
+  },
+  {
+    "nickname": "Josea Alvm",
+    "avatar": "joseaalvm.png",
+    "content": "Airplane",
+    "giftImage": "https://app.zhegnidcg.com/file/Airplane@3x.png",
+    "giftName": "Airplane",
+    "giftCount": 3,
+    "type": "gift"
+  },
+  {
+    "nickname": "Josh",
+    "avatar": "josh.png",
+    "content": "Let us keep the conversation positive and easygoing.",
+    "type": "text"
+  },
+  {
+    "nickname": "Lopez",
+    "avatar": "lopez.png",
+    "content": "I will start with something soft and a little dreamy.",
+    "type": "text"
+  },
+  {
+    "nickname": "Josea Alvm",
+    "avatar": "joseaalvm.png",
+    "content": "That sounds like the perfect soundtrack for a late night chat.",
+    "type": "text"
+  },
+  {
+    "nickname": "Renteria",
+    "avatar": "renteria.png",
+    "content": "Ice Cream",
+    "giftImage": "https://app.zhegnidcg.com/file/Ice_Cream@3x.png",
+    "giftName": "Ice_Cream",
+    "giftCount": 1,
+    "type": "gift"
+  },
+  {
+    "nickname": "Renteria",
+    "avatar": "renteria.png",
+    "content": "I like rooms where people can just relax and be themselves.",
+    "type": "text"
+  },
+  {
+    "nickname": "SKNbyKiki",
+    "avatar": "SKNbyKiki.png",
+    "content": "Same here. No pressure, just good energy.",
+    "type": "text"
+  },
+  {
+    "nickname": "Thiago Jsus",
+    "avatar": "thiagojsus.png",
+    "content": "What is one small thing that made you smile today?",
+    "type": "text"
+  },
+  {
+    "nickname": "SKNbyKiki",
+    "avatar": "SKNbyKiki.png",
+    "content": "Donut",
+    "giftImage": "https://app.zhegnidcg.com/file/Donut@3x.png",
+    "giftName": "Donut",
+    "giftCount": 5,
+    "type": "gift"
+  },
+  {
+    "nickname": "David bird",
+    "avatar": "davidbird.png",
+    "content": "A really good cup of coffee. Simple, but it worked.",
+    "type": "text"
+  },
+  {
+    "nickname": "Rose",
+    "avatar": "rose.png",
+    "content": "Mine was finding an old song I had completely forgotten.",
+    "type": "text"
+  },
+  {
+    "nickname": "Lvy",
+    "avatar": "Ivy.png",
+    "content": "That is a good reason to smile. Old songs have great timing.",
+    "type": "text"
+  },
+  {
+    "nickname": "Thiago Jsus",
+    "avatar": "thiagojsus.png",
+    "content": "Wand",
+    "giftImage": "https://app.zhegnidcg.com/file/Wand@3x.png",
+    "giftName": "Wand",
+    "giftCount": 2,
+    "type": "gift"
+  },
+  {
+    "nickname": "Aria",
+    "avatar": "aria.png",
+    "content": "I am still choosing my song. There are too many good options.",
+    "type": "text"
+  },
+  {
+    "nickname": "Dan",
+    "avatar": "dan.png",
+    "content": "Choose the one you would play on a road trip.",
+    "type": "text"
+  },
+  {
+    "nickname": "Josh",
+    "avatar": "josh.png",
+    "content": "Now I want to know everyone's road trip destination too.",
+    "type": "text"
+  },
+  {
+    "nickname": "David bird",
+    "avatar": "davidbird.png",
+    "content": "Energy",
+    "giftImage": "https://app.zhegnidcg.com/file/Energy@3x.png",
+    "giftName": "Energy",
+    "giftCount": 10,
+    "type": "gift"
+  },
+  {
+    "nickname": "Lopez",
+    "avatar": "lopez.png",
+    "content": "Somewhere with a long coastline and no rush.",
+    "type": "text"
+  },
+  {
+    "nickname": "Josea Alvm",
+    "avatar": "joseaalvm.png",
+    "content": "That sounds beautiful. I would bring a camera and stay for sunset.",
+    "type": "text"
+  },
+  {
+    "nickname": "Renteria",
+    "avatar": "renteria.png",
+    "content": "This is already turning into a very nice conversation.",
+    "type": "text"
+  },
+  {
+    "nickname": "Rose",
+    "avatar": "rose.png",
+    "content": "Agreed. I am glad I stopped by.",
+    "type": "text"
+  },
+  {
+    "nickname": "Rose",
+    "avatar": "rose.png",
+    "content": "Love",
+    "giftImage": "https://app.zhegnidcg.com/file/Love@3x.png",
+    "giftName": "Love",
+    "giftCount": 3,
+    "type": "gift"
+  },
+  {
+    "nickname": "SKNbyKiki",
+    "avatar": "SKNbyKiki.png",
+    "content": "Let us keep this playlist going for a little longer.",
+    "type": "text"
+  },
+  {
+    "nickname": "David bird",
+    "avatar": "davidbird.png",
+    "content": "I am not leaving until someone tells a good joke.",
+    "type": "text"
+  },
+  {
+    "nickname": "Dan",
+    "avatar": "dan.png",
+    "content": "I have one, but it may be better after the next song.",
+    "type": "text"
+  }
+]

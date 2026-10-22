@@ -166,57 +166,84 @@ struct UserDetailModel: Decodable {
 }
 
 
+/// 我的资料
+struct MineInfoModel: Codable {
+    
+    let sunriseDay: String       // 生日
+    let itemSmallImg: String     // 小尺寸头像
+    let guestTally: Int          // 粉丝数量
+    let petalForm: Int           // 性别
+    let leafSeal: String         // 个人签名
+    let gardenCount: Int         // 好友数量
+    let meadowHandle: String     // 云信账号
+    let petalMark: String        // 用户头像
+    let sproutCount: Int         // 关注数量
+    let forestGuest: Int64       // 用户 ID
+    let gem: Int                 // 宝石数量
+    let groveBadge: String       // 国家或地区 ID
+    let elderDeadline: Int64     // VIP 到期时间，毫秒时间戳
+    let gardenStanding: Int      // 用户等级
+    let seedCount: Int           // 钻石数量
+    let forestTier: Int          // 用户数字等级
+    let gardenPass: String       // IM Token
+    let nickname: String         // 用户昵称
+    let groveElite: Int          // VIP 状态：0否，1是
+    let groveEmblem: String      // 等级图标
+}
 
+/// 礼物
+struct GiftListResponse: Decodable {
+    let meadowLines: [GiftItemModel]
+}
 
+struct GiftItemModel: Decodable {
 
+    let blossomOpen: String     // 是否解锁：1已解锁，0未解锁
+    let meadowRank: Int         // 礼物等级
+    let petalMass: Int          // 礼物权重
+    let sproutFresh: Int        // 是否为新礼物：1是，0否
 
+    let petalImage: String      // 礼物徽章图片地址
+    let petalPortrait: String   // 礼物主图片地址
+    let blossomMotion: String   // 礼物动画地址
+    let leafMiniature: String   // 礼物小图地址
 
+    let meadowBalance: Int      // 礼物最大比例值
+    let meadowCost: Int         // 礼物价格
+    let dailyTitle: String      // 礼物名称
+    let groveKey: Int64         // 礼物 ID
+    let petalKind: Int          // 礼物类型
+    let groveKind: String       // 礼物分类
+}
 
+/// 语音聊天室
+struct ChatRoomModel: Decodable {
+    let nickname: String
+    let avatar: String
+    let content: String
+    let giftImage: String?
+    let giftName: String?
+    let giftCount: Int?
+    let type: LocalChatMessageType
+}
 
+/// 好友聊天
 
 
 
 
 /// 我的资料
 func requestMineInformation() {
-    Cal_Alamofire.shared.postData(urlSuffix: cal_mine_info) { result in
+    Cal_Alamofire.shared.post(urlSuffix: cal_mine_info) { (result: Result<MineInfoModel, NetworkError>) in
         ZKProgressHUD.dismiss()
         switch result {
-        case .success(let data):
-            print(String(data: data, encoding: .utf8) ?? "")
-
+        case .success(let model):
+            CalLoginStorage.shared.saveMineInfo(model)
         case .failure(let error):
             print(error)
         }
     }
 }
-
-/**
- 
- {"sunriseDay":"1997-03-17T07:26:22.410Z",
- "itemSmallImg":"lopez.png",
- "guestTally":0
- ,"petalForm":2,
- "leafSeal":"",
- "gardenCount":0,
- "meadowHandle":"",
- "petalMark":"lopez.png",
- "sproutCount":3,
- "forestGuest":10001,
- "gem":0,
- "groveBadge":"US",
- "elderDeadline":0,
- "gardenStanding":10,
- "seedCount":0,
- "forestTier":10,
- "gardenPass":"im_token_10001",
- "nickname":"Lopez",
- "groveElite":0,
- "groveEmblem":""}
-
- 
- */
-
 
 /// 更新token
 func updateUserToken(completion: @escaping () -> Void) {

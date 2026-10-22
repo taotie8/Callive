@@ -11,6 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatRoomController" customModule="Callive" customModuleProvider="target">
             <connections>
+                <outlet property="input_bottom_layout" destination="sTD-lK-Y4M" id="VKK-Wq-xJ7"/>
+                <outlet property="room_id" destination="b0B-zC-Ani" id="BPm-8D-WWj"/>
+                <outlet property="room_name" destination="oAp-5B-mMW" id="cBU-k1-dc9"/>
+                <outlet property="room_people" destination="90I-D7-iKU" id="Nkr-lf-NQq"/>
+                <outlet property="say_text" destination="H7Z-L7-zX1" id="Tzh-iB-jef"/>
+                <outlet property="tableView" destination="cXm-nr-6ll" id="siy-SS-oVx"/>
+                <outlet property="user_header" destination="KM9-MP-epu" id="C2n-yh-2l0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -183,11 +190,17 @@
                             <rect key="frame" x="345" y="12" width="36" height="36"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="room_gifts"/>
+                            <connections>
+                                <action selector="selectGiftAction:" destination="-1" eventType="touchUpInside" id="y7t-LO-A7e"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLf-vl-Obz">
                             <rect key="frame" x="297" y="12" width="36" height="36"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="room_three_line"/>
+                            <connections>
+                                <action selector="moreAction:" destination="-1" eventType="touchUpInside" id="drK-eB-4UE"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -243,7 +256,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.21960784310000001" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.2196078431372549" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditInforController" customModule="Callive" customModuleProvider="target">
             <connections>
+                <outlet property="desc_label" destination="dbW-NL-WNp" id="EjI-R5-zUu"/>
+                <outlet property="signature_text" destination="LVa-LT-fHn" id="w3c-l4-IsG"/>
                 <outlet property="user_header" destination="suN-SJ-473" id="RvW-r4-01J"/>
                 <outlet property="user_name_text" destination="J5i-cJ-vsO" id="8PD-GC-tQy"/>
                 <outlet property="user_time_label" destination="afC-kB-5B8" id="i3f-91-oJN"/>
