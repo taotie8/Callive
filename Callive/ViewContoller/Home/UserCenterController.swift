@@ -7,6 +7,9 @@ class UserCenterController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var user_image: UIImageView!
     private var items: [SunriseScene] = []
+    private var model: UserDetailModel?
+    private var chatTipsView: ChatTipsView?
+    
     var userId: Int64 = 0
     let headerView = Bundle.main.loadNibNamed("UserCenterHeaderView", owner: nil, options: nil)?.first as! UserCenterHeaderView
     
@@ -36,14 +39,23 @@ class UserCenterController: UIViewController {
     
     @IBAction func chatAndVideoCallsAction(_ sender: UIButton) {
         if sender.tag == 1000 {
+            if model == nil {
+                return
+            }
             let vc = ChatController()
+            vc.user_id = model!.forestGuest
+            vc.user_avatar = model!.petalMark
+            vc.isfollow = model!.visitSignal
+            vc.user_name = model!.nickname
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         }
         else {
-           let vc = VideoCallsController()
-           vc.hidesBottomBarWhenPushed = true
-           navigationController?.pushViewController(vc, animated: true)
+            showChatTipsView()
+            chatTipsView?.content_label.text = "You're not friends yet. You can't start a video call until the other person replies."
+//           let vc = VideoCallsController()
+//           vc.hidesBottomBarWhenPushed = true
+//           navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -54,6 +66,7 @@ class UserCenterController: UIViewController {
             guard let self = self else { return }
             switch result {
             case .success(let response):
+                self.model = response.orchardView
                 headerView.updateUserInformation(model: response.orchardView)
                 self.user_image.cal_setImage(response.orchardView.petalMark)
                 self.items = response.sunriseScenes
@@ -85,6 +98,23 @@ class UserCenterController: UIViewController {
                 print(error)
             }
         }
+    }
+    
+    func showChatTipsView() {
+        guard chatTipsView == nil,
+              let tipsView = Bundle.main.loadNibNamed(
+                "ChatTipsView",
+                owner: nil,
+                options: nil
+              )?.first as? ChatTipsView else {
+            return
+        }
+
+        chatTipsView = tipsView
+        tipsView.onClose = { [weak self] in
+            self?.chatTipsView = nil
+        }
+        tipsView.show(in: view)
     }
     
 }

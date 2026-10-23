@@ -6,11 +6,18 @@ final class Cal_KeyboardManager: NSObject {
     private weak var targetView: UIView?
     private var bottomConstraint: NSLayoutConstraint?
     private let adjustment: CGFloat
+    private let hiddenConstant: CGFloat
     
-    init(targetView: UIView, bottomConstraint: NSLayoutConstraint, adjustment: CGFloat = 0) {
+    init(
+        targetView: UIView,
+        bottomConstraint: NSLayoutConstraint,
+        adjustment: CGFloat = 0,
+        hiddenConstant: CGFloat = 0
+    ) {
         self.targetView = targetView
         self.bottomConstraint = bottomConstraint
         self.adjustment = adjustment
+        self.hiddenConstant = hiddenConstant
         super.init()
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardChanged(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
@@ -29,7 +36,9 @@ final class Cal_KeyboardManager: NSObject {
 
         let keyboardHeight = targetView.bounds.intersection(keyboardFrame).height
 
-        bottomConstraint?.constant = keyboardHeight + adjustment
+        bottomConstraint?.constant = keyboardHeight > 0
+            ? keyboardHeight + adjustment
+            : hiddenConstant
 
         UIView.animate(withDuration: 0.25) {
             targetView.layoutIfNeeded()

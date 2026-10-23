@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DailyCheckCell" customModule="Callive" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="59" height="84"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="59" height="84"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08W-RW-kcq">
+                        <rect key="frame" x="15" y="8" width="29" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="5Uk-UC-FRW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                        <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_coins_coin" translatesAutoresizingMaskIntoConstraints="NO" id="nFe-F9-MVe">
+                        <rect key="frame" x="13.666666666666664" y="26" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="Hwc-dg-TWD"/>
+                            <constraint firstAttribute="height" constant="32" id="V4k-fb-oGu"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gae-QK-oOP">
+                        <rect key="frame" x="20" y="62" width="19" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="9S3-Mj-XUw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="08W-RW-kcq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="4hI-RF-lXr"/>
+                <constraint firstItem="Gae-QK-oOP" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="5Ai-Vb-aOa"/>
+                <constraint firstAttribute="bottom" secondItem="Gae-QK-oOP" secondAttribute="bottom" constant="8" id="bg7-2v-uoZ"/>
+                <constraint firstItem="nFe-F9-MVe" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="cgW-rd-sof"/>
+                <constraint firstItem="nFe-F9-MVe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="26" id="h8r-vZ-86z"/>
+                <constraint firstItem="08W-RW-kcq" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="rvN-Cn-H4Z"/>
+            </constraints>
+            <connections>
+                <outlet property="check_coins_label" destination="Gae-QK-oOP" id="yHd-eE-Il0"/>
+                <outlet property="check_icon" destination="nFe-F9-MVe" id="q3w-iT-wPM"/>
+                <outlet property="time_label" destination="08W-RW-kcq" id="nXc-on-Msq"/>
+            </connections>
+            <point key="canvasLocation" x="2" y="107"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="check_coins_coin" width="32" height="32"/>
+    </resources>
+</document>

@@ -3,6 +3,7 @@ import UIKit
 
 class MessageSystemCell: UITableViewCell {
 
+    @IBOutlet weak var cell_content_label: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         

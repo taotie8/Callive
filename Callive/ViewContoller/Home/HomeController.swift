@@ -27,7 +27,10 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         setupUI()
         getAppNewConfig()
-        requestMineInformation()
+        requestMineInformation { }
+        
+        let checkView = Bundle.main.loadNibNamed("DailyCheckView", owner: nil, options: nil)?.first as! DailyCheckView
+        checkView.showDailyCheckView()
     }
     
     func getAppNewConfig() {
@@ -102,18 +105,6 @@ class HomeController: UIViewController {
     
     // 首页All
     func homeAllMedatas() {
-//        Cal_Alamofire.shared.postData(urlSuffix: cal_home_all) { result in
-//            ZKProgressHUD.dismiss()
-//            switch result {
-//            case .success(let data):
-//                print(String(data: data, encoding: .utf8) ?? "")
-//
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-        
-        
         ZKProgressHUD.show()
         Cal_Alamofire.shared.post(urlSuffix: cal_home_all) { [weak self] (result: Result<HomeAllResponse, NetworkError>) in
             ZKProgressHUD.dismiss()
@@ -213,11 +204,11 @@ extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate, 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cell_width = (UIScreen.main.bounds.width - 32.08)/2
-        if home_type == .follow {
+        if home_type == .all {
+            if indexPath.row == 0 {
+                return CGSize(width: UIScreen.main.bounds.width - 24, height: (UIScreen.main.bounds.width - 24) * 0.62)
+            }
             return CGSize(width: cell_width, height: cell_width * 1.17)
-        }
-        if indexPath.row == 0 {
-            return CGSize(width: UIScreen.main.bounds.width - 24, height: (UIScreen.main.bounds.width - 24) * 0.62)
         }
         return CGSize(width: cell_width, height: cell_width * 1.17)
     }

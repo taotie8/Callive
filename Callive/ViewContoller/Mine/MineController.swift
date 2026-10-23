@@ -15,6 +15,8 @@ class MineController: UIViewController {
         mine_header.layer.cornerRadius = 34
         mine_header.layer.masksToBounds = true
         updateMineProfile()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateMineInformation), name: Notification.Name("updateMineInformationNotification"), object: nil)
     }
     
     func updateMineProfile() {
@@ -25,6 +27,12 @@ class MineController: UIViewController {
             mine_bio.text = model.leafSeal
             following_label.text = "\(model.sproutCount)"
             follower_label.text = "\(model.guestTally)"
+        }
+    }
+    
+    @objc func updateMineInformation() {
+        requestMineInformation {
+            self.updateMineProfile()
         }
     }
 
@@ -39,11 +47,13 @@ class MineController: UIViewController {
         }
         if sender.tag == 1002 {
            let vc = MineFollowController()
+            vc.classType = .follow
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         }
         if sender.tag == 1003 {
             let vc = MineFollowController()
+            vc.classType = .fans
              vc.hidesBottomBarWhenPushed = true
              navigationController?.pushViewController(vc, animated: true)
         }
@@ -51,7 +61,10 @@ class MineController: UIViewController {
     
     @IBAction func itemsAction(_ sender: UIButton) {
         if sender.tag == 1000 {
-            
+            let vc = MineFollowController()
+            vc.classType = .block
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
         }
         if sender.tag == 1001 {
             

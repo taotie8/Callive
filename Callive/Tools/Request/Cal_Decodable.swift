@@ -91,7 +91,7 @@ struct MeadowLineItem: Decodable {
     let onlineUsers: [String]?  // 在线用户列表
     let gardenLabel: String?    // 房间名称
     let gardenSignal: Int?      // 房间状态
-    let forestGuest: Int64     // 用户 ID
+    let forestGuest: Int64      // 用户 ID
     let nebulaBackdrop: String? // 房间背景图
     let groveBadge: String?     // 用户徽章
     let gardenStory: String?    // 房间简介或动态描述
@@ -230,15 +230,31 @@ struct ChatRoomModel: Decodable {
 /// 好友聊天
 
 
+/// 黑名单
+struct BlacklistResponse: Decodable {
+    let meadowLines: [BlacklistUser]
+}
+
+struct BlacklistUser: Decodable {
+    let petalForm: Int          // 性别类型
+    let meadowHandle: String    // 用户账号/用户名
+    let nickname: String        // 用户昵称
+    let petalMark: String       // 用户头像地址
+    let orchardClass: Int       // 用户类型
+    let forestGuest: Int64      // 用户 ID
+    let groveBadge: String      // 用户地区或国家标识
+    let seasons: Int            // 用户年龄
+}
 
 
 /// 我的资料
-func requestMineInformation() {
+func requestMineInformation(completion: @escaping () -> Void) {
     Cal_Alamofire.shared.post(urlSuffix: cal_mine_info) { (result: Result<MineInfoModel, NetworkError>) in
         ZKProgressHUD.dismiss()
         switch result {
         case .success(let model):
             CalLoginStorage.shared.saveMineInfo(model)
+            completion()
         case .failure(let error):
             print(error)
         }

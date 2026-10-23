@@ -31,3 +31,5 @@ let cal_gift_list = "/r2/leaf/treasure/index"         // 礼物列表
 /// 我的模块
 let cal_mine_info = "/v3/guest/story"           // 我的资料
 let cal_update_info = "/v3/guest/refresh"       // 更新资料
+let cal_block_list = "/v3/guest/fence/catalog"  // 黑名单列表
+let cal_fans_list = "/v3/guest/circles"       // 关注、粉丝列表

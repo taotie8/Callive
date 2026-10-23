@@ -14,7 +14,11 @@ class MineFollowCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+    }
+    
+    func black_cellUpdateViews(model: BlacklistUser) {
+        cell_user_header.cal_setImage(model.petalMark)
+        cell_label.text = model.nickname
     }
     
 }

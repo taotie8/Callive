@@ -55,6 +55,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="last_message_label" destination="1R2-DI-QOU" id="last-message-outlet"/>
+                <outlet property="user_header" destination="VSL-55-aRO" id="user-header-outlet"/>
+                <outlet property="user_name_label" destination="Pn0-Yc-j05" id="user-name-outlet"/>
+            </connections>
             <point key="canvasLocation" x="182" y="69"/>
         </tableViewCell>
     </objects>

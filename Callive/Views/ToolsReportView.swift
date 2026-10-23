@@ -35,7 +35,24 @@ class ToolsReportView: UIView {
                 case .success(_):
                     ZKProgressHUD.showSuccess()
                     if (self.cal_self.navigationController != nil) {
-                        self.cal_self.navigationController?.navigationController?.popViewController(animated: true)
+                        self.cal_self.navigationController?.popViewController(animated: true)
+                        
+                        guard let navigationController = self.cal_self.navigationController else { return }
+                        for vc in navigationController.viewControllers {
+                            if vc is HomeController {
+                                navigationController.popToViewController(vc, animated: true)
+                                break
+                            }
+                            if vc is MineController {
+                                navigationController.popToViewController(vc, animated: true)
+                                break
+                            }
+                            if vc is MessageListsController {
+                                navigationController.popToViewController(vc, animated: true)
+                                break
+                            }
+                        }
+                        
                     }
                     else {
                         self.cal_self.dismiss(animated: true, completion: nil)

@@ -71,8 +71,8 @@ class EditInforController: UIViewController {
         Cal_Alamofire.shared.postData(urlSuffix: cal_update_info, body: body) { result in
             ZKProgressHUD.dismiss()
             switch result {
-            case .success(let data):
-                requestMineInformation()
+            case .success(_):
+                NotificationCenter.default.post(name: Notification.Name("updateMineInformationNotification"), object: nil)
                 ZKProgressHUD.showSuccess("Profile updated successfully. Your profile photo is under review.")
                 self.navigationController?.popViewController(animated: true)
             case .failure(let error):
