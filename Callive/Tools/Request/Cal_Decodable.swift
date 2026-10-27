@@ -247,6 +247,32 @@ struct BlacklistUser: Decodable {
 }
 
 
+/// 签到
+struct DailyCheckResponse: Decodable {
+//    let sunriseDays: [DailyCheckDay]    // VIP 签到奖励，7 天奖励列表
+    let dawnMark: Int                   // 今天是否已经签到：0否，1是
+    let seasonTurn: Int                 // 当前签到到第几天：1～7
+//    let sunsetClock: Int                // 倒计时，单位秒
+    let sproutSeal: Int                 // 是否可以签到：0否，1是
+    let sunriseSpan: [DailyCheckDay]    // 普通用户签到奖励，7 天奖励列表
+//    let thornBound: Int                 // 是否锁定：0未锁定，1锁定
+//    let elderMark: Int                  // 是否为 VIP：0否，1是
+}
+
+struct DailyCheckDay: Decodable {
+    let cycle: Int?         // 第几天：1～7
+    let claimed: Int?       // 是否已经领取：0否，1是
+    let current: Int?       // 是否是当前签到日：0否，1是
+    let coin: Int?          // 金币奖励数量
+
+//    let items: [DailyCheckReward]?
+    // 其他奖励列表
+}
+
+
+
+
+
 /// 我的资料
 func requestMineInformation(completion: @escaping () -> Void) {
     Cal_Alamofire.shared.post(urlSuffix: cal_mine_info) { (result: Result<MineInfoModel, NetworkError>) in
@@ -293,13 +319,17 @@ func updateUserFollowStatus(userId: Int64, follow_type: Int, completion: @escapi
 }
 
 
-//Cal_Alamofire.shared.postData(urlSuffix: cal_home_all) { result in
-//    ZKProgressHUD.dismiss()
-//    switch result {
-//    case .success(let data):
-//        print(String(data: data, encoding: .utf8) ?? "")
-//
-//    case .failure(let error):
-//        print(error)
-//    }
-//}
+
+
+func requestCommon() {
+    Cal_Alamofire.shared.postData(urlSuffix: cal_sgin_detail) { result in
+        ZKProgressHUD.dismiss()
+        switch result {
+        case .success(let data):
+            print(String(data: data, encoding: .utf8) ?? "")
+
+        case .failure(let error):
+            print(error)
+        }
+    }
+}

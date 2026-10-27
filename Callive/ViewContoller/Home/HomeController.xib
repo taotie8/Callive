@@ -102,6 +102,9 @@
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="qiandao"/>
+                            <connections>
+                                <action selector="showCheck_inAction:" destination="-1" eventType="touchUpInside" id="hJw-2U-kFK"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

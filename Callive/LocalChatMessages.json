@@ -12,8 +12,8 @@
     "type": "text"
   },
   {
-    "nickname": "System",
-    "avatar": "",
+    "nickname": "Jiao",
+    "avatar": "rose.png",
     "content": "Please be kind and keep the room clean.",
     "type": "text"
   },
@@ -246,3 +246,4 @@
     "type": "text"
   }
 ]
+

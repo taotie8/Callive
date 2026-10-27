@@ -28,9 +28,10 @@ class HomeController: UIViewController {
         setupUI()
         getAppNewConfig()
         requestMineInformation { }
-        
-        let checkView = Bundle.main.loadNibNamed("DailyCheckView", owner: nil, options: nil)?.first as! DailyCheckView
-        checkView.showDailyCheckView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     func getAppNewConfig() {
@@ -40,6 +41,10 @@ class HomeController: UIViewController {
             switch result {
             case .success(_):
                 self?.backExpiresInStatus()
+                if hasSignedToday == false {
+                    let checkView = Bundle.main.loadNibNamed("DailyCheckView", owner: nil, options: nil)?.first as! DailyCheckView
+                    checkView.showDailyCheckView()
+                }
             case .failure(let error):
                 print(error)
             }
@@ -69,6 +74,12 @@ class HomeController: UIViewController {
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "HomeControllerCell", bundle: nil), forCellWithReuseIdentifier: "cell")
     }
+    
+    @IBAction func showCheck_inAction(_ sender: Any) {
+        let checkView = Bundle.main.loadNibNamed("DailyCheckView", owner: nil, options: nil)?.first as! DailyCheckView
+        checkView.showDailyCheckView()
+    }
+    
     
     @IBAction func selectTitlesAction(_ sender: UIButton) {
         for view in titleView.subviews {

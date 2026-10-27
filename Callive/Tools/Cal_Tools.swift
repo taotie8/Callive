@@ -25,6 +25,19 @@ func cal_pasteString(text: String) {
     ZKProgressHUD.showSuccess("Copy Successfully")
 }
 
+func todayString() -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    formatter.locale = Locale(identifier: "en_US_POSIX")
+    formatter.calendar = Calendar.current
+    return formatter.string(from: Date())
+}
+
+func updateCoinsNumber(coins: Int) {
+    let totalCoin = UserDefaults.standard.integer(forKey: "coinBalance")
+    UserDefaults.standard.set(totalCoin + coins, forKey: "coinBalance")
+}
+
 
 final class CalLoginStorage {
     

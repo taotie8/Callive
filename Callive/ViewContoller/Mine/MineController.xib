@@ -434,7 +434,7 @@
                 <constraint firstItem="er4-j9-Kzm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="y53-At-t7G"/>
                 <constraint firstItem="pFK-Y0-JCA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="z7I-cU-MSw"/>
             </constraints>
-            <point key="canvasLocation" x="81.679389312977094" y="106.33802816901409"/>
+            <point key="canvasLocation" x="74" y="150"/>
         </view>
     </objects>
     <resources>

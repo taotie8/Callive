@@ -32,6 +32,8 @@ class GiftGivingView: UIView {
     }
     
     private func setupUI() {
+        coins_label.text = "\(UserDefaults.standard.integer(forKey: "coinBalance"))"
+
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 8

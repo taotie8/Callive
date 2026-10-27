@@ -1,8 +1,11 @@
 
 import UIKit
-
+import ZKProgressHUD
 class DeleteView: UIView {
 
+    @IBOutlet weak var delete_title: UILabel!
+    @IBOutlet weak var delete_content: UILabel!
+    @IBOutlet weak var delete_button: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -27,6 +30,13 @@ class DeleteView: UIView {
     
     @IBAction func deleteAction() {
         hiddenDeleteView()
+        ZKProgressHUD.show()
+        UserDefaults.standard.removeObject(forKey: "login_token")
+        UserDefaults.standard.synchronize()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            ZKProgressHUD.dismiss()
+            UIApplication.shared.cal_window?.rootViewController = LoginController()
+        }
     }
     
     @IBAction func cancelAction() {

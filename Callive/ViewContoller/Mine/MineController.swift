@@ -67,10 +67,18 @@ class MineController: UIViewController {
             navigationController?.pushViewController(vc, animated: true)
         }
         if sender.tag == 1001 {
-            
+            let vc = UserAgreementController()
+            vc.hidesBottomBarWhenPushed = true
+            vc.pageTitle = "Privacy Policy"
+            vc.urlString = cal_privacy_url
+            navigationController?.pushViewController(vc, animated: true)
         }
         if sender.tag == 1002 {
-            
+            let vc = UserAgreementController()
+            vc.hidesBottomBarWhenPushed = true
+            vc.pageTitle = "User Agreement"
+            vc.urlString = cal_useragreement_url
+            navigationController?.pushViewController(vc, animated: true)
         }
         if sender.tag == 1003 {
             let deleteView = UINib(nibName: "DeleteView", bundle: nil).instantiate(withOwner: self, options: nil).first as! DeleteView
@@ -78,6 +86,9 @@ class MineController: UIViewController {
         }
         if sender.tag == 1004 {
             let deleteView = UINib(nibName: "DeleteView", bundle: nil).instantiate(withOwner: self, options: nil).first as! DeleteView
+            deleteView.delete_button.setTitle("Log Out", for: .normal)
+            deleteView.delete_content.text = "Are you sure you want to Log Out"
+            deleteView.delete_title.text = "Log Out"
             deleteView.showDeleteView()
         }
     }

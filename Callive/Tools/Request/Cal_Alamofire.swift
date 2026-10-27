@@ -45,7 +45,7 @@ class Cal_Alamofire {
             "appId": "26737235",
             "X-Handset-Count": UIDevice.current.identifierForVendor?.uuidString ?? "",
             "X-Grove-Edition": Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0",
-            "X-Sprout-Signal": "", // pushToken
+            "X-Sprout-Signal": UserDefaults.standard.object(forKey: "pushToken") as? String ?? ""
         ]
         
         if let loginInfo = CalLoginStorage.shared.loginInfo {
@@ -99,7 +99,6 @@ class Cal_Alamofire {
                    let code = jsonObject["code"] as? Int,
                    code == 40101 {
 //                    CalLoginStorage.shared.clear()
-                    
                     DispatchQueue.main.async {
                         UIApplication.shared.cal_window?.rootViewController = LoginController()
                     }

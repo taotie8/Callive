@@ -110,6 +110,11 @@
                 <constraint firstItem="5TF-JR-mNa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jav-0a-zww"/>
                 <constraint firstAttribute="bottom" secondItem="5TF-JR-mNa" secondAttribute="bottom" id="pFZ-mm-eG4"/>
             </constraints>
+            <connections>
+                <outlet property="delete_button" destination="LW1-sW-cuu" id="rCU-1F-MsW"/>
+                <outlet property="delete_content" destination="9YV-Pr-mkV" id="xdC-e0-WO2"/>
+                <outlet property="delete_title" destination="DWp-7p-6YX" id="3MH-XV-raA"/>
+            </connections>
             <point key="canvasLocation" x="83" y="107"/>
         </view>
     </objects>
